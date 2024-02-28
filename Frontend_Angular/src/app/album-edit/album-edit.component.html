@@ -1,0 +1,18 @@
+<div class="container mt-4">
+    <h2>Editar Álbum</h2>
+  
+    <form (submit)="guardarCambios()" #formulario="ngForm">
+      <div class="mb-3">
+        <label for="artista_id" class="form-label">Artista:</label>
+        <select class="form-control" id="artista_id" [(ngModel)]="albumActual.artista_id" name="artista_id" required>
+          <option *ngFor="let artista of artistas" [value]="artista.id">{{ artista.nombre }} {{ artista.apellido }}</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre:</label>
+        <input type="text" class="form-control" id="nombre" [(ngModel)]="albumActual.nombre" name="nombre" required>
+      </div>
+      <button type="submit" class="btn btn-success" [disabled]="!formulario.valid">Guardar Cambios</button>
+    </form>
+  </div>
+  

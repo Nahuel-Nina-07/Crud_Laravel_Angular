@@ -1,0 +1,18 @@
+<div class="container mt-4">
+    <h2>Crear Nuevo Álbum</h2>
+  
+    <form (submit)="guardarNuevoAlbum()" #formulario="ngForm">
+      <div class="mb-3">
+        <label for="artista_id" class="form-label">Artista:</label>
+        <select class="form-control" id="artista_id" [(ngModel)]="nuevoAlbum.artista_id" name="artista_id" required>
+          <option *ngFor="let artista of artistas" [value]="artista.id">{{ artista.nombre }} {{ artista.apellido }}</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre:</label>
+        <input type="text" class="form-control" id="nombre" [(ngModel)]="nuevoAlbum.nombre" name="nombre" required>
+      </div>
+      <button type="submit" class="btn btn-success" [disabled]="!formulario.valid">Guardar</button>
+    </form>
+  </div>
+  

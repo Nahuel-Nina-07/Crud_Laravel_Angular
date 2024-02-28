@@ -1,0 +1,28 @@
+<div class="container mt-4">
+    <h2>Crear Nuevo Artista</h2>
+    
+    <form (submit)="guardarNuevoArtista()" #formulario="ngForm">
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre:</label>
+        <input type="text" class="form-control" id="nombre" [(ngModel)]="nuevoArtista.nombre" name="nombre" required>
+      </div>
+      <div class="mb-3">
+        <label for="apellido" class="form-label">Apellido:</label>
+        <input type="text" class="form-control" id="apellido" [(ngModel)]="nuevoArtista.apellido" name="apellido" required>
+      </div>
+      <div class="mb-3">
+        <label for="genero" class="form-label">Género:</label>
+        <input type="text" class="form-control" id="genero" [(ngModel)]="nuevoArtista.genero" name="genero" required>
+      </div>
+      <div class="mb-3">
+        <label for="fecha_nacimiento" class="form-label">Fecha de Nacimiento:</label>
+        <input type="date" class="form-control" id="fecha_nacimiento" [(ngModel)]="nuevoArtista.fecha_nacimiento" name="fecha_nacimiento" required>
+      </div>
+      <div class="mb-3">
+        <label for="nacionalidad" class="form-label">Nacionalidad:</label>
+        <input type="text" class="form-control" id="nacionalidad" [(ngModel)]="nuevoArtista.nacionalidad" name="nacionalidad" required>
+      </div>
+      <button type="submit" class="btn btn-success" [disabled]="!formulario.valid">Guardar</button>
+    </form>
+  </div>
+  

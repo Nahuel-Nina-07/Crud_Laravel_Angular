@@ -1,0 +1,31 @@
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center">
+        <h2>Listado de Artistas</h2>
+        <button class="btn btn-primary" >
+            <i class="bi bi-plus"></i> Crear Nuevo Artista
+        </button>
+    </div>
+    
+    <ul class="list-group mt-3">
+        <li *ngFor="let artist of artists" class="list-group-item">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>{{ artist.nombre }} {{ artist.apellido }}</h5>
+                    <p><strong>Nacionalidad:</strong> {{ artist.nacionalidad }}</p>
+                    <p><strong>Fecha de Nacimiento:</strong> {{ artist.fecha_nacimiento | date: 'dd/MM/yyyy' }}</p>
+                    <p><strong>Género:</strong> {{ artist.genero }}</p>
+                </div>
+                <div>
+                    <div class="col-md-6 text-md-end">
+                        <button class="btn btn-info me-2" [routerLink]="['/artist-edit', artist.id]">
+                            <i class="bi bi-pencil"></i> Editar
+                        </button>                          
+                        <button class="btn btn-danger" >
+                            <i class="bi bi-trash"></i> Eliminar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
